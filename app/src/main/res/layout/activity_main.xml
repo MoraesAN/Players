@@ -5,48 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="@string/title1"
-        android:textSize="18sp" />
+        android:text="@string/titulo1"
+        android:textSize="18dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/musica" />
+        android:layout_height="200dp"
+        android:src="@drawable/musica"
+        android:scaleType="centerInside" />
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/btnPlay"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:onClick="playPause"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:visibility="visible"
+            android:onClick="playPause"
             android:background="@android:color/transparent"
-            app:srcCompat="@android:drawable/ic_media_pause" />
+            app:srcCompat="@android:drawable/ic_media_play" />
 
         <ImageButton
             android:id="@+id/btnPause"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
             android:onClick="playPause"
             android:visibility="gone"
             android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            app:srcCompat="@android:drawable/ic_media_pause" />
+
     </LinearLayout>
-
-
+    <Button
+        android:id="@+id/btnIrParaMusica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="activityVideo"
+        android:text="Ir para video"
+        android:textAllCaps="false"/>
 </LinearLayout>

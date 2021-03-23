@@ -2,6 +2,7 @@ package com.example.players;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -16,30 +17,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mediaPlayer = MediaPlayer.create(this, R.raw.musica);
-        mediaPlayer.start();
-        btnPause = findViewById(R.id.btnPause);
-        btnPlay = findViewById(R.id.btnPlay);
 
+        btnPlay = findViewById(R.id.btnPlay);
+        btnPause = findViewById(R.id.btnPause);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.musica);
     }
 
+    //Outros métodos
     public void playPause(View v){
-        if(mediaPlayer.isPlaying()){
-            btnPlay.setVisibility(View.GONE);
-            btnPause.setVisibility(View.VISIBLE); // método para "Aparecer" o botão
-            mediaPlayer.pause();
-
-        } else {
-            btnPlay.setVisibility(View.GONE); // método para "Sumir" o botão
-            btnPause.setVisibility(View.VISIBLE);
+        if(!mediaPlayer.isPlaying()){
             mediaPlayer.start();
-
+            btnPlay.setVisibility(View.GONE);
+            btnPause.setVisibility(View.VISIBLE);
+        } else {
+            mediaPlayer.pause();
+            btnPause.setVisibility(View.GONE);
+            btnPlay.setVisibility(View.VISIBLE);
         }
 
     }
+    public void activityVideo(View v){
+        Intent novaJanela = new Intent(MainActivity.this, VideoActivity.class);
+        startActivity(novaJanela);
+    }
+
     @Override
     protected void onPause() {
-        if (mediaPlayer.isPlaying()) {
+        if(mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
         }
         super.onPause();
