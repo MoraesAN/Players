@@ -9,9 +9,9 @@
     tools:context=".TextoActivity">
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
         android:text="@string/titulo3"
         android:textSize="18dp" />
 
