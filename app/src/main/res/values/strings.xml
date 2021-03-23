@@ -3,4 +3,6 @@
     <string name="titulo1">Player de Música</string>
     <string name="titulo2">Player de Vídeo</string>
     <string name="titulo3">Player de Texto</string>
+    <string name="botaoLer">Ler texto</string>
+    <string name="botaoApagar">Apagar texto</string>
 </resources>
