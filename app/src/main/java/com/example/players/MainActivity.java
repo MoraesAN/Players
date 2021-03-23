@@ -37,4 +37,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    protected void onPause() {
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+        super.onPause();
+    }
+
 }
